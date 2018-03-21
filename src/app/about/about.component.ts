@@ -3,8 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-about',
   template: `
-   <h1 [class.fg]="myProperty">About Page</h1>
-
+   
+  
+  <div *ngIf="toggle">
+    ....
+    ...
+    .....
+    <h1  [class.fg]="myProperty">About Page</h1>
+  </div>
 
    <h1>{{1+2}}</h1>
    <h1 [style.border]="myProperty2?'1px solid black':'none'" >{{"Sheldon" + " Cooper"}}</h1>
@@ -24,6 +30,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   myProperty: string = "Hello Angular";
+  toggle: boolean = true;
 
   //0,false,null,undefined,"",NaN
 
@@ -33,6 +40,9 @@ export class AboutComponent {
   }
 
   onClick(param) {
-    console.log("Clicked", param);
+    if (this.toggle) this.toggle = false;
+    else this.toggle = true;
   }
 }
+// 1.x ng-show ng-hide ngIf
+//directives ngModel,ngClass, ngStyle, ngIf, ngFor
