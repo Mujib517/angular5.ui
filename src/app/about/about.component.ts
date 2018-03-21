@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-about',
   template: `
-   
+
+
+    <h1 [ngClass]="cls">Heading</h1>
+
   
   <div *ngIf="toggle">
     ....
@@ -12,25 +15,18 @@ import { Component } from '@angular/core';
     <h1  [class.fg]="myProperty">About Page</h1>
   </div>
 
-   <h1>{{1+2}}</h1>
-   <h1 [style.border]="myProperty2?'1px solid black':'none'" >{{"Sheldon" + " Cooper"}}</h1>
-
-   {{myProperty}}
-
-   <h3>{{getValue()}}</h3>
-
-   {{myProperty ? "Yes":"No"}}
-
-   <button [disabled]="getValue()">Save</button>
-
-   <button (click)="onClick(10)">Click</button>
-
-   <input type="text" [(ngModel)]="myProperty"/>
+  
   `
 })
 export class AboutComponent {
   myProperty: string = "Hello Angular";
+  myProperty2: boolean;
+
   toggle: boolean = true;
+  cls: any = {
+    fg: true,
+    bg: this.myProperty
+  };
 
   //0,false,null,undefined,"",NaN
 
