@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 
     <h1 [ngClass]="cls">Heading</h1>
 
+    <h1 [ngStyle]="style">Heading2</h1>
   
   <div *ngIf="toggle">
     ....
@@ -21,6 +22,10 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   myProperty: string = "Hello Angular";
   myProperty2: boolean;
+  style: any = {
+    'background-color': 'yellow',
+    border:'1px solid gray'
+  };
 
   toggle: boolean = true;
   cls: any = {
