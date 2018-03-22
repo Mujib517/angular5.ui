@@ -52,12 +52,15 @@ import { Component } from '@angular/core';
       </tbody>
     </table>
     
+    <h1> {{ date | time}}</h1>
 
     <div [ngSwitch]="priority">
       <h1 *ngSwitchCase="'High'">High Priority Task</h1>
       <h1 *ngSwitchCase="'Medium'">Medium Priority Task</h1>
       <h1 *ngSwitchCase="'Low'">Low Priority Task</h1>
       <h1 *ngSwitchDefault>Very Low Priority Task</h1>
+
+     
     </div>
 
   `
@@ -65,11 +68,9 @@ import { Component } from '@angular/core';
 export class AboutComponent {
 
   priority: string = "11";
+  date: Date = new Date("2017-08-09");
 
   arr: number[] = [1, 2, 3, 4, 5, 6];
-
-
-
 }
 // 1.x ng-show ng-hide ngIf
 //directives ngModel,ngClass, ngStyle, ngIf, ngFor,ngSwitch
