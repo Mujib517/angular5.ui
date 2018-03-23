@@ -11,10 +11,12 @@ import { BookComponent } from './book/book.component';
 import { BookService } from "./shared/book.service";
 import { ConsoleLogger } from "./shared/console.logger";
 import { FileLogger } from "./shared/file.logger";
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent],
+    imports: [BrowserModule, FormsModule,HttpClientModule],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent, UsersComponent],
     providers: [BookService, { provide: ConsoleLogger, useClass: FileLogger }],
     bootstrap: [AppComponent]
 })
