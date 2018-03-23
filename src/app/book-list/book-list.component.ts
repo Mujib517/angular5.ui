@@ -6,13 +6,8 @@ import { Component } from '@angular/core';
   template: `
    <h1>Books</h1>
   <div class="col-md-7">
-    <div class="well" *ngFor="let book of books">
-        <h3>{{book.name | uppercase}}</h3>
-        <h4>{{book.author | lowercase}}</h4>
-        <div>{{book.price | currency}}</div>
-        <div>{{book.lastUpdated | date:'dd-MM-yyyy hh:mm'}}</div>
-        <div> {{book.lastUpdated | time }}</div>
-        <hr/>
+    <div class="well" *ngFor="let bk of books">
+        <app-book [book]="bk"></app-book>
     </div>
    </div>
   `
