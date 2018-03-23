@@ -8,10 +8,12 @@ import { AboutComponent } from './about/about.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { TimePipe } from "./shared/time.pipe";
 import { BookComponent } from './book/book.component';
+import { BookService } from "./shared/book.service";
 
 @NgModule({
     imports: [BrowserModule, FormsModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent,TimePipe, BookComponent],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent],
+    providers: [BookService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

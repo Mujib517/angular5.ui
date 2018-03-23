@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookService } from '../shared/book.service';
 //pipes: | lowercase, uppercase, titlecase, currency, date, json , async
 
 @Component({
@@ -16,9 +17,10 @@ export class BookListComponent {
 
   books: any[];
 
-  constructor() {
-    this.books = [{ id: 1, name: 'Speaking JS', author: 'Author 1', price: 100, lastUpdated: Date.now() },
-    { id: 2, name: 'Eloquent JS', author: 'Author 2', price: 300, lastUpdated: Date.now() },
-    { id: 3, name: 'HeadFirst JS', author: 'Author 3', price: 200, lastUpdated: Date.now() }];
+  //dependency injection. constructor injection
+  constructor(svc:BookService) {
+    //SRP
+    //let svc = new BookService();
+    this.books = svc.get();
   }
 }
