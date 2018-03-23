@@ -3,6 +3,9 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class BookService {
 
+
+    constructor(){}
+
     get() {
         return [{ id: 1, name: 'Speaking JS', author: 'Author 1', price: 100, lastUpdated: Date.now() },
         { id: 2, name: 'Eloquent JS', author: 'Author 2', price: 300, lastUpdated: Date.now() },
