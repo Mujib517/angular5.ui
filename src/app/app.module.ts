@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from './about/about.component';
@@ -13,10 +14,16 @@ import { ConsoleLogger } from "./shared/console.logger";
 import { FileLogger } from "./shared/file.logger";
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { AppRouterModule } from "./shared/app.router.module";
+
+
 
 @NgModule({
-    imports: [BrowserModule, FormsModule,HttpClientModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent, UsersComponent],
+    imports: [BrowserModule, FormsModule, HttpClientModule,AppRouterModule],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent],
     providers: [BookService, { provide: ConsoleLogger, useClass: FileLogger }],
     bootstrap: [AppComponent]
 })
