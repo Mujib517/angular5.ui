@@ -19,11 +19,10 @@ export class BookListComponent {
 
   //dependency injection. constructor injection
   constructor(svc: BookService) {
-    //SRP
-    //let svc = new BookService();
+
     svc.get()
       .subscribe(
-        resp => console.log(resp),
+        resp => this.books=resp,
         (err) => console.log(err)
       )
   }
