@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from './about/about.component';
 import { BookListComponent } from './book-list/book-list.component';
-import { TimePipe } from "./shared/time.pipe";
 import { BookComponent } from './book/book.component';
 import { BookService } from "./shared/book.service";
 import { ConsoleLogger } from "./shared/console.logger";
@@ -18,13 +17,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRouterModule } from "./shared/app.router.module";
-
+import { SharedModule } from "./shared/shared.module";
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule,AppRouterModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, TimePipe, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent],
-    providers: [BookService, { provide: ConsoleLogger, useClass: FileLogger }],
-    bootstrap: [AppComponent]
+    imports: [BrowserModule, FormsModule, HttpClientModule,SharedModule,AppRouterModule],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent],
+   bootstrap: [AppComponent]
 })
 export class AppModule { }
