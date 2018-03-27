@@ -14,4 +14,8 @@ export class BookService {
             .retry(3)
             .map(res => res["data"]);
     }
+
+    getById(id: string) {
+        return this.http.get('https://node-rest-training.herokuapp.com/api/books/' + id);
+    }
 }
