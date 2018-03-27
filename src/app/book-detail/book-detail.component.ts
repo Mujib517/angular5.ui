@@ -34,11 +34,13 @@ export class BookDetailComponent {
 
   constructor(private svc: BookService, private route: ActivatedRoute) {
     var id = route.snapshot.params.id;
-    console.log(id);
 
     svc.getById(id)
       .subscribe(
-        res => this.book = res,
+        res => {
+          this.book = res;
+          this.svc.reviews = res["reviews"] || [];
+        },
         err => console.log(err)
       )
   }

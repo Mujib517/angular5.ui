@@ -6,6 +6,8 @@ import 'rxjs/add/operator/retry';
 @Injectable()
 export class BookService {
 
+    reviews: any[];
+
     constructor(private http: HttpClient) {
     }
 
