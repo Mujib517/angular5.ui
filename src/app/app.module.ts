@@ -19,11 +19,13 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRouterModule } from "./shared/app.router.module";
 import { SharedModule } from "./shared/shared.module";
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { SpecsComponent } from './specs/specs.component';
 
 
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule,SharedModule,AppRouterModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent],
    bootstrap: [AppComponent]
 })
 export class AppModule { }

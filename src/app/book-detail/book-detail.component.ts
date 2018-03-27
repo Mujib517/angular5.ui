@@ -18,10 +18,18 @@ import { ActivatedRoute } from '@angular/router';
      </div>
     </div>
 
+    <div>
+      <ul class="nav-tabs nav">
+        <li routerLinkActive="active"><a routerLink="reviews">Reviews</a></li>
+        <li routerLinkActive="active"><a routerLink="specs">More</a></li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+
   `
 })
 export class BookDetailComponent {
-  book: any={};
+  book: any = {};
 
 
   constructor(private svc: BookService, private route: ActivatedRoute) {
