@@ -7,6 +7,7 @@ import { BookListComponent } from "../book-list/book-list.component";
 import { BookDetailComponent } from "../book-detail/book-detail.component";
 import { ReviewsComponent } from "../reviews/reviews.component";
 import { SpecsComponent } from "../specs/specs.component";
+import { BookResolver } from "./book.resolver";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -18,12 +19,13 @@ const ROUTES: Route[] =
     [{ path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'books', component: BookListComponent },
+    { path: 'books', component: BookListComponent, resolve: { books: BookResolver } },
     { path: 'books/:id', component: BookDetailComponent, children: CHILDREN },
     { path: '**', redirectTo: '' }];
 
 @NgModule({
     imports: [RouterModule.forRoot(ROUTES)],
+    providers: [BookResolver],
     exports: [RouterModule]
 })
 export class AppRouterModule { }
