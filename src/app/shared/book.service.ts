@@ -20,4 +20,8 @@ export class BookService {
     getById(id: string) {
         return this.http.get('https://node-rest-training.herokuapp.com/api/books/' + id);
     }
+
+    save(book:any){
+        return this.http.post("https://node-rest-training.herokuapp.com/api/books/",book);
+    }
 }

@@ -8,6 +8,7 @@ import { BookDetailComponent } from "../book-detail/book-detail.component";
 import { ReviewsComponent } from "../reviews/reviews.component";
 import { SpecsComponent } from "../specs/specs.component";
 import { BookResolver } from "./book.resolver";
+import { NewBookComponent } from "../new-book/new-book.component";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -20,6 +21,7 @@ const ROUTES: Route[] =
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'books', component: BookListComponent, resolve: { books: BookResolver } },
+    { path: 'books/new', component: NewBookComponent},   
     { path: 'books/:id', component: BookDetailComponent, children: CHILDREN },
     { path: '**', redirectTo: '' }];
 

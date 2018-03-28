@@ -7,6 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-book-list',
   template: `
    <h1>Books</h1>
+   <div class="row">
+    <button routerLink="/books/new" class="btn btn-danger btn-sm">Add New Button</button>
+   </div>
   <div class="col-md-7">
     <div class="well" *ngFor="let bk of books">
         <app-book [book]="bk"></app-book>
@@ -14,7 +17,7 @@ import { ActivatedRoute } from '@angular/router';
    </div>
   `
 })
-export class BookListComponent {
+export class BookListComponent {  
 
   books: any[];
 
