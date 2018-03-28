@@ -10,14 +10,14 @@ import { ActivatedRoute } from '@angular/router';
    <div class="row">
     <button routerLink="/books/new" class="btn btn-danger btn-sm">Add New Button</button>
    </div>
-  <div class="col-md-7">
-    <div class="well" *ngFor="let bk of books">
-        <app-book [book]="bk"></app-book>
+    <div class="col-md-7">
+      <div class="well" *ngFor="let bk of books">
+          <app-book [book]="bk"></app-book>
+      </div>
     </div>
-   </div>
   `
 })
-export class BookListComponent {  
+export class BookListComponent {
 
   books: any[];
 
