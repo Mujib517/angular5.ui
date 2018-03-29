@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from "./app.component";
@@ -22,11 +23,12 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { SpecsComponent } from './specs/specs.component';
 import { NewBookComponent } from './new-book/new-book.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule,SharedModule,AppRouterModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent],
-   bootstrap: [AppComponent]
+    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, SharedModule, AppRouterModule],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

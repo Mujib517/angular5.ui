@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
    <h1>Books</h1>
    <div class="row">
     <button routerLink="/books/new" class="btn btn-danger btn-sm">Add New Button</button>
+    <button routerLink="/books/reactive" class="btn btn-danger btn-sm">Reactive Form</button>
    </div>
     <div class="col-md-7">
       <div class="well" *ngFor="let bk of books">
