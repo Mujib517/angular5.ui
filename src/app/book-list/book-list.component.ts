@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
    </div>
     <div class="col-md-7">
       <div class="well" *ngFor="let bk of books">
-          <app-book [book]="bk"></app-book>
+          <app-book [book]="bk" (notify)="onNotify($event)"></app-book>
       </div>
     </div>
   `
@@ -23,12 +23,17 @@ export class BookListComponent {
   books: any[];
 
   //dependency injection. constructor injection
-  constructor(svc: BookService, private route: ActivatedRoute) {
+  constructor(private svc: BookService, private route: ActivatedRoute) {
     this.books = this.route.snapshot.data.books;
-    // svc.get()
-    //   .subscribe(
-    //     resp => this.books=resp,
-    //     (err) => console.log(err)
-    //   )
+    
+  }
+
+  onNotify(event) {
+    console.log("Event received",event);
+    this.svc.get()
+      .subscribe(
+        resp => this.books=resp,
+        (err) => console.log(err)
+      );
   }
 }

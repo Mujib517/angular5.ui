@@ -24,4 +24,8 @@ export class BookService {
     save(book:any){
         return this.http.post("https://node-rest-training.herokuapp.com/api/books/",book);
     }
+
+    delete(id:string){
+        return this.http.delete('https://node-rest-training.herokuapp.com/api/books/' + id); 
+    }
 }
