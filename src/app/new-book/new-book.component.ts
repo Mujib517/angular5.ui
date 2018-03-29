@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { BookService } from '../shared/book.service';
 
 //required,min,max,pattern
@@ -65,8 +65,9 @@ import { BookService } from '../shared/book.service';
       </div>
       </div>
   </form>
-
-  `
+  `,
+  styleUrls: ['./new-book.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class NewBookComponent {
 

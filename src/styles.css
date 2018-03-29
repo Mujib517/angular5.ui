@@ -10,9 +10,3 @@
 .bg2{
     background-color:yellow;
 }
-input.ng-invalid{
-    border-left:5px solid brown;
-}
-input.ng-valid{
-    border-left:5px solid green;
-}
