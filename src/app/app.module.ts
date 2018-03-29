@@ -27,7 +27,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, SharedModule, AppRouterModule],
+    imports: [BrowserModule, FormsModule, ReactiveFormsModule, SharedModule, AppRouterModule],
     declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent],
     bootstrap: [AppComponent]
 })
