@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BookService } from '../shared/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reactive-form',
@@ -36,7 +38,7 @@ export class ReactiveFormComponent {
 
   frm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private svc: BookService, private route: Router) {
     this.frm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
       author: ['', [Validators.required]],
@@ -45,10 +47,18 @@ export class ReactiveFormComponent {
     });
   }
 
+
+
   onSave() {
     if (this.frm.valid) {
-      console.log(this.frm.value);
-      this.frm.reset();
+      this.svc.save(this.frm.value).subscribe(
+        res => {
+          this.frm.reset();
+          this.route.navigate(["/books"]);
+        },
+        err => console.log(err)
+      )
+
     }
 
   }
