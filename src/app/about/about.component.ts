@@ -12,7 +12,7 @@ import { ConsoleLogger } from '../shared/console.logger';
 })
 export class AboutComponent {
 
-  myProp: string = "abc";
+  myProp: string = "";
 
   constructor(logger: ConsoleLogger) {
     logger.error("There is an error");
