@@ -4,7 +4,7 @@ import { ConsoleLogger } from '../shared/console.logger';
 @Component({
   selector: 'app-about',
   template: `
-    <h1>About Page</h1>
+    <h1 dlBorder>About Page</h1>
 
     <h1 [dlShow]="myProp">Heding</h1>
 
