@@ -5,9 +5,14 @@ import { ConsoleLogger } from '../shared/console.logger';
   selector: 'app-about',
   template: `
     <h1>About Page</h1>
+
+    <h1 [dlShow]="myProp">Heding</h1>
+
   `
 })
 export class AboutComponent {
+
+  myProp: string = "abc";
 
   constructor(logger: ConsoleLogger) {
     logger.error("There is an error");
