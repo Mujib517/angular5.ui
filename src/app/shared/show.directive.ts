@@ -7,15 +7,10 @@ import { Directive, ElementRef } from "@angular/core";
 export class ShowDirective {
 
     constructor(private el: ElementRef) {
-        
+
     }
 
-    set dlShow(val:boolean){
-        if(val){
-            this.el.nativeElement.style.display = "block";
-        }
-        else{
-            this.el.nativeElement.style.display = "none";
-        }
+    set dlShow(val: boolean) {
+        this.el.nativeElement.style.display = val ? "block" : "none";
     }
 }
