@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BookService } from '../shared/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { Book } from '../shared/models/book.model';
 //pipes: | lowercase, uppercase, titlecase, currency, date, json , async
 
 @Component({
@@ -20,19 +21,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookListComponent {
 
-  books: any[];
+  books: Book[];
 
   //dependency injection. constructor injection
   constructor(private svc: BookService, private route: ActivatedRoute) {
     this.books = this.route.snapshot.data.books;
-    
   }
 
   onNotify(event) {
-    console.log("Event received",event);
+    console.log("Event received", event);
     this.svc.get()
       .subscribe(
-        resp => this.books=resp,
+        resp => this.books = resp,
         (err) => console.log(err)
       );
   }

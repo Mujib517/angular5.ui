@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../shared/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { Book } from '../shared/models/book.model';
 
 @Component({
   selector: 'app-book-detail',
@@ -29,10 +30,10 @@ import { ActivatedRoute } from '@angular/router';
   `
 })
 export class BookDetailComponent {
-  book: any = {};
-
+  book: Book;
 
   constructor(private svc: BookService, private route: ActivatedRoute) {
+    this.book = new Book();
     var id = route.snapshot.params.id;
 
     svc.getById(id)

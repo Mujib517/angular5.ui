@@ -8,7 +8,6 @@ import { ConsoleLogger } from '../shared/console.logger';
 
     <h1 [dlShow]="myProp">Heading</h1>
     <h1 *dlIf="myProp">Heading2</h1>
-
   `
 })
 export class AboutComponent {
