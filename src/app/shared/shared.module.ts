@@ -6,11 +6,12 @@ import { TimePipe } from "./time.pipe";
 import { HttpClientModule } from "@angular/common/http";
 import { ShowDirective } from "./show.directive";
 import { BorderDirective } from "./border.directive";
+import { IfDirective } from "./if.directive";
 
 @NgModule({
     imports: [HttpClientModule],
-    declarations: [TimePipe, ShowDirective,BorderDirective],
+    declarations: [TimePipe, ShowDirective,BorderDirective,IfDirective],
     providers: [BookService, { provide: ConsoleLogger, useClass: FileLogger }],
-    exports: [TimePipe, ShowDirective,BorderDirective]
+    exports: [TimePipe, ShowDirective,BorderDirective,IfDirective]
 })
 export class SharedModule { }

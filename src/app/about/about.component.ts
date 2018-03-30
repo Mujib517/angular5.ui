@@ -6,13 +6,14 @@ import { ConsoleLogger } from '../shared/console.logger';
   template: `
     <h1 dlBorder>About Page</h1>
 
-    <h1 [dlShow]="myProp">Heding</h1>
+    <h1 [dlShow]="myProp">Heading</h1>
+    <h1 *dlIf="myProp">Heading2</h1>
 
   `
 })
 export class AboutComponent {
 
-  myProp: string = "";
+  myProp: string = "adfaf";
 
   constructor(logger: ConsoleLogger) {
     logger.error("There is an error");
