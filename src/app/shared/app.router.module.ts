@@ -10,6 +10,7 @@ import { SpecsComponent } from "../specs/specs.component";
 import { BookResolver } from "./book.resolver";
 import { NewBookComponent } from "../new-book/new-book.component";
 import { ReactiveFormComponent } from "../reactive-form/reactive-form.component";
+import { LoginComponent } from "../login/login.component";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -20,6 +21,7 @@ const CHILDREN: Route[] = [
 const ROUTES: Route[] =
     [{ path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'books', component: BookListComponent, resolve: { books: BookResolver } },
     { path: 'books/new', component: NewBookComponent },
