@@ -15,6 +15,7 @@ export class BookService {
     }
 
     get(): Observable<Book[]> {
+
         return this.http.get<Book[]>('https://node-rest-training.herokuapp.com/api/books')
             .retry(3)
             .map(res => res["data"]);
