@@ -1,10 +1,13 @@
 import { Injectable } from "@angular/core";
-import { CanActivate, CanLoad, CanActivateChild } from "@angular/router";
+import { CanActivate, CanLoad, CanActivateChild, CanDeactivate } from "@angular/router";
 import { UserService } from "./user.service";
 
 @Injectable()
-export class BookGaurds implements CanActivate, CanLoad, CanActivateChild {
+export class BookGaurds implements CanActivate, CanLoad, CanActivateChild, CanDeactivate<any> {
 
+    canDeactivate(): boolean {
+        return confirm("Your data will be lost. Are you sure?");
+    }
     canActivateChild(): boolean {
         return true;
     }

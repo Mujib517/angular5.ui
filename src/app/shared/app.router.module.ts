@@ -25,7 +25,7 @@ const ROUTES: Route[] =
     { path: 'login', component: LoginComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'books', canLoad: [BookGaurds], component: BookListComponent, resolve: { books: BookResolver } },
-    { path: 'books/new', component: NewBookComponent },
+    { path: 'books/new', component: NewBookComponent,canDeactivate:[BookGaurds] },
     { path: 'books/reactive', component: ReactiveFormComponent },
     { path: 'books/:id', component: BookDetailComponent,canActivateChild:[BookGaurds], children: CHILDREN },
     { path: '**', redirectTo: '' }];
