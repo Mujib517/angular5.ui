@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
               <li><a routerLink="/about">About</a></li>
               <li><a routerLink="/books">Books</a></li>
               <li><a routerLink="/contact">Contact</a></li>
+              <li><a routerLink="/lazy">Lazy</a></li>
           </ul>
           <div class="pull-right">
             <button  *ngIf="!isLoggedIn" class="btn btn-info btn-sm" routerLink="/login">Login</button>

@@ -16,3 +16,4 @@ export { ReviewsComponent } from './reviews/reviews.component';
 export { SpecsComponent } from './specs/specs.component';
 export { NewBookComponent } from './new-book/new-book.component';
 export { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+export {LazyComponent} from './shared/lazy.component';

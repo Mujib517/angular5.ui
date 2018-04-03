@@ -12,6 +12,7 @@ import { NewBookComponent } from "../new-book/new-book.component";
 import { ReactiveFormComponent } from "../reactive-form/reactive-form.component";
 import { LoginComponent } from "../login/login.component";
 import { BookGaurds } from "./book.guards";
+import { LazyComponent } from "../app.barrel";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -25,9 +26,10 @@ const ROUTES: Route[] =
     { path: 'login', component: LoginComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'books', canLoad: [BookGaurds], component: BookListComponent, resolve: { books: BookResolver } },
-    { path: 'books/new', component: NewBookComponent,canDeactivate:[BookGaurds] },
+    { path: 'books/new', component: NewBookComponent, canDeactivate: [BookGaurds] },
     { path: 'books/reactive', component: ReactiveFormComponent },
-    { path: 'books/:id', component: BookDetailComponent,canActivateChild:[BookGaurds], children: CHILDREN },
+    { path: 'books/:id', component: BookDetailComponent, canActivateChild: [BookGaurds], children: CHILDREN },
+    { path: 'lazy', component: LazyComponent,loadChildren:'app/shared/lazy.module#LazyModule' },
     { path: '**', redirectTo: '' }];
 
 @NgModule({

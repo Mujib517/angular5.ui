@@ -5,13 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from "./shared/shared.module";
 import { AppRouterModule } from "./shared/app.router.module";
 
-import { AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent }
+import { AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent, LazyComponent }
     from './app.barrel';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, SharedModule, AppRouterModule],
-    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent, LoginComponent],
+    declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent, LoginComponent, LazyComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
