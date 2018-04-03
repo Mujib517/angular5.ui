@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BookService } from '../shared/book.service';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../shared/models/book.model';
@@ -19,12 +19,16 @@ import { Book } from '../shared/models/book.model';
     </div>
   `
 })
-export class BookListComponent {
+export class BookListComponent implements OnInit {
 
   books: Book[];
 
   //dependency injection. constructor injection
   constructor(private svc: BookService, private route: ActivatedRoute) {
+    
+  }
+
+  ngOnInit(){
     this.books = this.route.snapshot.data.books;
   }
 

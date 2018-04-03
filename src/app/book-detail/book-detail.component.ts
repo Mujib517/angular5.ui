@@ -29,20 +29,23 @@ import { Book } from '../shared/models/book.model';
 
   `
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit {
   book: Book;
 
   constructor(private svc: BookService, private route: ActivatedRoute) {
-    this.book = new Book();
-    var id = route.snapshot.params.id;
+  }
 
-    svc.getById(id)
+  ngOnInit() {
+    this.book = new Book();
+    var id = this.route.snapshot.params.id;
+
+    this.svc.getById(id)
       .subscribe(
         res => {
           this.book = res;
           this.svc.reviews = res["reviews"] || [];
         },
         err => console.log(err)
-      )
+      );
   }
 }

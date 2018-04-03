@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, SimpleChange } from '@angular/core';
 import { BookService } from '../shared/book.service';
 
 @Component({
@@ -24,12 +24,16 @@ export class BookComponent {
     this.notify = new EventEmitter();
   }
 
+  ngOnChanges(changes: SimpleChange): void {
+    console.log("Inside on changes", changes);
+  }
+
   onDelete(id) {
     this.svc.delete(id)
       .subscribe(
         res => {
           console.log("Deleted");
-          this.notify.emit({msg:"Dummy message"}); //something is changed
+          this.notify.emit({ msg: "Dummy message" }); //something is changed
         },
         err => console.log(err)
       )
