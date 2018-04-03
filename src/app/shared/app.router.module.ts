@@ -11,6 +11,7 @@ import { BookResolver } from "./book.resolver";
 import { NewBookComponent } from "../new-book/new-book.component";
 import { ReactiveFormComponent } from "../reactive-form/reactive-form.component";
 import { LoginComponent } from "../login/login.component";
+import { BookGaurds } from "./book.guards";
 
 const CHILDREN: Route[] = [
     { path: '', pathMatch: 'full', redirectTo: 'reviews' },
@@ -23,7 +24,7 @@ const ROUTES: Route[] =
     { path: 'about', component: AboutComponent },
     { path: 'login', component: LoginComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'books', component: BookListComponent, resolve: { books: BookResolver } },
+    { path: 'books', canActivate: [BookGaurds], component: BookListComponent, resolve: { books: BookResolver } },
     { path: 'books/new', component: NewBookComponent },
     { path: 'books/reactive', component: ReactiveFormComponent },
     { path: 'books/:id', component: BookDetailComponent, children: CHILDREN },

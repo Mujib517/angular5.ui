@@ -9,11 +9,12 @@ import { BorderDirective } from "./border.directive";
 import { IfDirective } from "./if.directive";
 import { BookIntercetor } from "./book.interceptor";
 import { UserService } from "./user.service";
+import { BookGaurds } from "./book.guards";
 
 @NgModule({
     imports: [HttpClientModule],
     declarations: [TimePipe, ShowDirective, BorderDirective, IfDirective],
-    providers: [BookService,UserService,
+    providers: [BookService, UserService, BookGaurds,
         { provide: HTTP_INTERCEPTORS, useClass: BookIntercetor, multi: true },
         { provide: ConsoleLogger, useClass: FileLogger }],
     exports: [TimePipe, ShowDirective, BorderDirective, IfDirective]
