@@ -11,15 +11,18 @@ import {
     MatToolbarModule, MatProgressSpinnerModule
 } from '@angular/material';
 
+const MAT_MODULES = [MatButtonModule,
+    MatIconModule, MatCheckboxModule, MatInputModule, MatSelectModule,
+    MatToolbarModule, MatProgressSpinnerModule];
+
+
 import { AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent, LazyComponent }
     from './app.barrel';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
     imports: [BrowserModule, BrowserAnimationsModule, FormsModule,
-        ReactiveFormsModule, SharedModule, AppRouterModule, MatButtonModule,
-        MatIconModule, MatCheckboxModule, MatInputModule, MatSelectModule,
-        MatToolbarModule, MatProgressSpinnerModule],
+        ReactiveFormsModule, SharedModule, AppRouterModule, ...MAT_MODULES],
     declarations: [AppComponent, HomeComponent, AboutComponent, BookListComponent, BookComponent, UsersComponent, HeaderComponent, FooterComponent, ContactComponent, BookDetailComponent, ReviewsComponent, SpecsComponent, NewBookComponent, ReactiveFormComponent, LoginComponent, LazyComponent],
     bootstrap: [AppComponent]
 })
