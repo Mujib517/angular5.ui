@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, DoCheck, OnChanges } from "@angular/core";
+import { Component, OnInit, DoCheck, OnChanges } from "@angular/core";
 import { ConsoleLogger } from "../shared/console.logger";
 
 @Component({

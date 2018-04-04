@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
 
@@ -26,16 +26,21 @@ import { Router } from '@angular/router';
 </header>
   `
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
     isLoggedIn: boolean;
 
     constructor(private userSvc: UserService, private route: Router) {
-        this.isLoggedIn = this.userSvc.isLoggedIn;
+
+    }
+
+    ngOnInit() {
+        this.userSvc.onLogin.subscribe(
+            res => this.isLoggedIn = res
+        );
     }
 
     onLogout() {
         this.userSvc.logout();
         this.route.navigate(["/login"]);
-        this.isLoggedIn = this.userSvc.isLoggedIn;
     }
 }
