@@ -23,6 +23,9 @@ export class ReviewsComponent {
 
 
   constructor(private svc: BookService) {
+  }
+
+  ngDoCheck(){
     this.reviews = this.svc.reviews;
   }
 }

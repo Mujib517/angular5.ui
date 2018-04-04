@@ -36,6 +36,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.svc.reviews = null;
     this.book = new Book();
     var id = this.route.snapshot.params.id;
 
