@@ -39,4 +39,6 @@ import { Component, OnInit } from '@angular/core';
   `
 })
 export class ContactComponent {
+  count: number = 10;
+  count2: number;
 }
