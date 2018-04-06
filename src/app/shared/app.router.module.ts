@@ -26,7 +26,7 @@ const ROUTES: Route[] =
     { path: 'login', component: LoginComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'books', canLoad: [BookGaurds], component: BookListComponent, resolve: { books: BookResolver } },
-    { path: 'books/new', component: NewBookComponent, canDeactivate: [BookGaurds] },
+    { path: 'books/new', component: NewBookComponent},
     { path: 'books/reactive', component: ReactiveFormComponent },
     { path: 'books/:id', component: BookDetailComponent, canActivateChild: [BookGaurds], children: CHILDREN },
     { path: 'lazy', component: LazyComponent,loadChildren:'app/shared/lazy.module#LazyModule' },
