@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: "https://node-rest-training.herokuapp.com/api/books/"
 };
